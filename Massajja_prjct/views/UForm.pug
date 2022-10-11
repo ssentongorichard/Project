@@ -1,0 +1,66 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Produce details
+  link(rel='stylesheet', type='text/css', href='/style.css')
+.container
+  header
+    h1#title MASSAJJA URBAN FARMER INITIATIVE
+  #form-wrapper
+    form#register-form(action='/', method='post')
+      input#datetoday.form-control-2(type='date', name='datetoday', placeholder='date')
+      br
+      br
+      input#names.form-control-2(type='text', name='names', placeholder='Produce name')
+      br
+      br
+      .container2
+        select#ward(name='ward')
+          option(value='select your Ward') Select Ward
+          |               &gt;
+          option(value='WardA') Ward A
+          option(value='wardB') ward B
+          option(value='wardC') ward C
+        br
+        br
+        select#payment(name='payment')
+          option(value='select payment') Select mode of pay
+          |                 &gt;
+          option(value='Male') Mobile
+          option(value='Female') Paypal
+          option(value='Secret') Bank
+        br
+        br
+        select#produce(name='roduce')
+          option(value='select produce') Produce type
+          |               &gt;
+          option(value='Dairy') Dairy
+          option(value='Hoticulture') Hoticulture
+          option(value='Poultry') Paultry
+        br
+        br
+      .container3
+        input#price.form-control-2(type='text', name='price', placeholder='Price')
+        br
+        br
+        input#quantity.form-control(type='text', name='quantity', placeholder='Quantity')
+        br
+        br
+        select#delivery(name='delivery')
+          option(value='select delivery') Delivery mode
+          |                 &gt;
+          option(value='Door') Door
+          option(value='Centred') Centered
+          option(value='Pickup') Pick UP
+        br
+        br
+      input#address.form-control-2.form-float(type='text', name='address', placeholder='Adress')
+      br
+      br
+      p.null-field
+      button#submit(type='submit')
+        | Register
+  p.copyright
+    | &copy; Massajja Ubarn farmer initiative. All rights reserved!
+  script(src='/validate.js')
