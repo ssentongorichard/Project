@@ -12,69 +12,85 @@ head
     form(action='/ufarmerupload', name='urbanfarmerupload', enctype='multipart/form-data', method='POST')
       h1
         | Product Upload Form
-      .row
-        .col
-          .width4
-            label(for='productcode') Product Code: 
+      div.padding  
+        .row
+          .padding
+            input#datetoday.form-control-2(type='date', name='datetoday', placeholder='date')
+          .col.container4
+            .width4
+              label(for='productcode') Product Code: 
+              br
+              input#productcode.width5(type='text', name='productcode')
+            .width5
+              label(for='productcategory') Product Category: 
+              br
+              select#productcategory.width5(name='productcategory')
+                option(value='')
+                option(value='Dairy') Dairy
+                option(value='Horticulture') Horticulture 
+                option(value='Poultry') Poultry
+            .width4
+              label(for='productname') Product Name: 
+              br
+              input#productname.width5(type='text', name='productname')
+            |                             Stock Count:
+            .flex
+              label(for='stockcount')
+              input#stockcount(type='number', name='stockcount')
+              label(for='stockmeasure')
+              select#stockmeasure.width(name='stockmeasure')
+                option(value='')
+                option(value='gm') gm
+                option(value='Kgs') Kg
+                option(value='liters') ltr
+            .radio
+              lable(for='producttype') Product Type:
+              input#organic(type='radio', name='producttype', value='organic')
+              label(for='organic') Organic
+              input#noneorganic(type='radio', name='producttype', value='noneorganic')
+              label(for='gender-female') None organic
+            .width4.padding
+              label(for='names') SupplierName: 
+              br
+              input#names.width5(type='text', name='names')
+          .col.container5
+            .width4
+              label(for='unitprice') Price:
+              br
+              input#unitprice.width5(type='number', name='unitprice')
+            .width5
+              label(for='pytmode') Payment Mode: 
+              br
+              select#pytmode.width5(name='pytmode')
+                option(value='')
+                option(value='cash') Cash
+                option(value='mobilemoney') Mobile Money
+            .width5
+              label(for='deliverymode') Delivery Mode: 
+              br
+              select#deliverymode.width5(name='deliverymode')
+                option(value='')
+                option(value='pickup') Pick up
+                option(value='homedelivery') Home Delivery
+            .width4
+              label(for='productimage') Upload Image:
+              br
+              input#productimage(type='file', name='productimage', style='background-color:rgb(219, 237, 192);')
+            .width5
+              label(for='ward') Ward: 
+              br
+              select(name='ward')
+                        if currentUser
+                            option(value = currentUser._id) #{currentUser.ward}
+          .padding
+        input#address.form-control-2.form-float(type='text', name='address', placeholder='Adress')
+      div.margin 
+        .flex.padding2
+          .width3
+            input#frm-btn-ao(type='reset', value='Reset')
             br
-            input#productcode.width5(type='text', name='productcode')
-          .width5
-            label(for='productcategory') Product Category: 
+          .width3.button
+            input#upload-button.button(type='submit', value='Upload Product')
             br
-            select#productcategory.width5(name='productcategory')
-              option(value='')
-              option(value='Dairy') Dairy
-              option(value='Horticulture') Horticulture 
-              option(value='Poultry') Poultry
-          .width4
-            label(for='productname') Product Name: 
-            br
-            input#productname.width5(type='text', name='productname')
-          |                             Stock Count:
-          .flex
-            label(for='stockcount')
-            input#stockcount(type='number', name='stockcount')
-            label(for='stockmeasure')
-            select#stockmeasure.width(name='stockmeasure')
-              option(value='')
-              option(value='gm') gm
-              option(value='Kgs') Kg
-              option(value='liters') ltr
-          .radio
-            lable(for='producttype') Product Type:
-            input#organic(type='radio', name='producttype', value='organic')
-            label(for='organic') Organic
-            input#noneorganic(type='radio', name='producttype', value='noneorganic')
-            label(for='gender-female') None organic
-        .col
-          .width4
-            label(for='unitprice') Price:
-            br
-            input#unitprice.width5(type='number', name='unitprice')
-          .width5
-            label(for='pytmode') Payment Mode: 
-            br
-            select#pytmode.width5(name='pytmode')
-              option(value='')
-              option(value='cash') Cash
-              option(value='mobilemoney') Mobile Money
-          .width5
-            label(for='deliverymode') Delivery Mode: 
-            br
-            select#deliverymode.width5(name='deliverymode')
-              option(value='')
-              option(value='pickup') Pick up
-              option(value='homedelivery') Home Delivery
-          .width4
-            label(for='productimage') Upload Image:
-            br
-            input#productimage(type='file', name='productimage', style='background-color:rgb(219, 237, 192);')
-      .flex.padding2
-        .width3
-          input#frm-btn-ao(type='reset', value='Reset')
-          br
-        .width3.button
-          input#upload-button.button(type='submit', value='Upload Product')
-          br
 p.copyright.align
   | &copy; Massajja Ubarn farmer initiative. All rights reserved!

@@ -29,7 +29,7 @@ quantity: {
 unitprice: {
   type: Number
 },
-email: {
+address: {
   type: mongoose.Schema.Types.ObjectId,
   ref: 'Registration'
   
@@ -43,7 +43,10 @@ datetoday: {
 ward: {
   type: mongoose.Schema.Types.ObjectId,
   ref: 'Registration'
-  
+},
+names: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'Registration'
 },
 pytmode: {
   type: String

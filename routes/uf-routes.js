@@ -30,8 +30,8 @@ var storage = multer.diskStorage({
 // });
 
 router.get("/ufarmerupload", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-  console.log("This is the Current User ", req.session.user);
-  res.render("ufupload", { currentUser: req.session.user });
+  console.log("This is the Current User ", req.session.foid);
+  res.render("ufupload", { currentUser: req.session.foid });
 });
   
 router.post("/ufarmerupload", connectEnsureLogin.ensureLoggedIn(), upload.single('productimage'), async (req, res) => {

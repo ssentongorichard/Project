@@ -8,7 +8,7 @@ const connectEnsureLogin = require('connect-ensure-login');
 // const UrbanFarmerUpload = require('../models/Urbanfarmerupload');
 
 //structure of a route
-router.get('/dashboard',connectEnsureLogin.ensureLoggedIn(), (req,res) =>{
+router.get('/dashboardao',connectEnsureLogin.ensureLoggedIn(), (req,res) =>{
 res.render('dashboardAO');
 })
 router.post('/dashboard',async(req,res) =>{

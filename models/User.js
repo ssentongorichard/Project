@@ -8,8 +8,7 @@ role: {
 },
 username: {
     type:String,
-    required: true,
-    trim: true
+    trim: true,
 },
 password: {
     type:String,
@@ -23,8 +22,7 @@ datetoday:{
     trim: true
 },
 names: {
-    type:String,
-    required: true
+    type:String
 },
 dateofbirth:{
     type:Date
